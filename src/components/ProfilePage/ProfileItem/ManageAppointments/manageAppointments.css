@@ -1,0 +1,152 @@
+.appointments-container {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    height: 100vh;
+    border-radius: 10px;
+  }
+  
+  .appointments-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28.4px;
+    color: #272848;
+    display:inline-block;
+    padding:20px 10px 0px 10px;
+  }
+  
+  .tabs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #f0f0f5;
+  }
+  
+  .tabs {
+    display: flex;
+    gap:1rem;
+  }
+  
+  .tab {
+    font-weight: 700;
+    padding: 20px 15px 10px 15px;
+    font-size: 16px;
+    color: #272848;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .tab.active::after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 100%;
+    border-bottom: 4px solid #1e90ff;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+  
+  .calendar-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 7px 20px;
+    border: none;
+    margin-top: 0px;
+    border-radius: 5px;
+    background-color: #0167ff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .calendar-button:hover {
+    background-color: green;
+  }
+  
+  .appointments-table-container {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+  }
+
+  .appointments-table-container::-webkit-scrollbar {
+    width: 14px;
+  }
+  
+  .appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .appointments-table thead tr {
+    background: #fbfbfb;
+    color: #272848;
+    border: 1px solid #0000001a;
+  }
+  
+  .appointments-table thead tr th {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #272848;
+  }
+  
+  .appointments-table tbody tr td {
+    color: #272848;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px;
+    border-bottom: 4px solid #f0f0f5;
+  }
+  
+  .status-dot {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+  
+  .status-dot.green {
+    background-color: green;
+  }
+  
+  .status-dot.orange {
+    background-color: orange;
+  }
+  
+  .status-dot.red {
+    background-color: red;
+  }
+  
+  .view-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .view-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .view-all-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .view-all-button:hover {
+    background-color: #0056b3;
+  }
+  
