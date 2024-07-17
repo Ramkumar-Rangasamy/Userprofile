@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-//imported react-router-dom in Link and Outlet using right side showing profileItem
-import { Link, Outlet } from 'react-router-dom';
+//imported react-router-dom in NavLink using active chnages and Outlet using right side showing profileItem
+import { NavLink, Outlet } from 'react-router-dom';
 
 //style.css
 import './profilelayout.css';
 
 //Using image aslo and imported
-import profileimg from '../Assets/userprofile.jpeg'
+import profileimg from '../Assets/userprofile.jpeg';
 
 //imported react-icons
 import { BsCardHeading } from "react-icons/bs";
@@ -30,7 +30,6 @@ const languages = [
 ];
 
 const ProfileLayout = () => {
-  
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
   const [notificationStatus, setNotificationStatus] = useState('Allow');
 
@@ -59,54 +58,74 @@ const ProfileLayout = () => {
             <nav>
               <ul>
                 <li>
-                  <BsCardHeading size='1.2rem' />
-                  <Link to="manage-appointments">Manage Appointments</Link>
+                  <NavLink to="manage/appointments" activeClassName="active">
+                    <BsCardHeading size='1.2rem' />
+                    <span>Manage Appointments</span>
+                  </NavLink>
                 </li>
                 <li>
-                  <FiUser size='1.2rem' />
-                  <Link to="my-profile">My Profile</Link>
+                  <NavLink to="edit/profile" activeClassName="active">
+                    <FiUser size='1.2rem' />
+                    <span>My Profile</span>
+                  </NavLink>
                 </li>
                 <li>
-                  <MdOutlineInbox size='1.2rem' />
-                  <Link to="inbox">Inbox</Link>
-                  <IoIosArrowForward />
+                  <NavLink to="inbox" activeClassName="active">
+                    <MdOutlineInbox size='1.2rem' />
+                    <span>Inbox</span>
+                    <IoIosArrowForward />
+                  </NavLink>
                 </li>
                 <li>
-                  <LiaFileAltSolid size='1.2rem' />
-                  <Link to="prescriptions">Prescriptions</Link>
-                  <IoIosArrowForward />
+                  <NavLink to="prescriptions" activeClassName="active">
+                    <LiaFileAltSolid size='1.2rem' />
+                    <span>Prescriptions</span>
+                    <IoIosArrowForward />
+                  </NavLink>
                 </li>
                 <li>
-                  <FaRegStar size='1.2rem' />
-                  <Link to="reviews">Reviews</Link>
-                  <IoIosArrowForward />
+                  <NavLink to="reviews" activeClassName="active">
+                    <FaRegStar size='1.2rem' />
+                    <span>Reviews</span>
+                    <IoIosArrowForward />
+                  </NavLink>
                 </li>
                 <li>
-                  <IoSettingsOutline size='1.2rem' />
-                  <Link to="settings">Settings</Link>
+                  <NavLink to="settings" activeClassName="active">
+                    <IoSettingsOutline size='1.2rem' />
+                    <span>Settings</span>
+                  </NavLink>
                 </li>
                 <li>
-                  <LuBell size='1.2rem' />
-                  <Link to="notification">Notification</Link>
-                  <select className="dropdown-notification" value={notificationStatus} onChange={handleNotificationChange}>
-                    <option value="Allow">Allow</option>
-                    <option value="Not Allow">Not Allow</option>
-                  </select>
+                  <NavLink to="notification" activeClassName="active">
+                    <LuBell size='1.2rem' />
+                    <span>Notification</span>
+                 
+                    <select className="dropdown-notification" value={notificationStatus} onChange={handleNotificationChange}>
+                      <option value="Allow">Allow</option>
+                      <option value="Not Allow">Not Allow</option>
+                    </select>
+                  </NavLink>
                 </li>
                 <li>
-                  <TbWorld size='1.2rem' />
-                  <Link to="language">Language</Link>
-                  <select className="dropdown" value={selectedLanguage.code} onChange={handleLanguageChange}>
-                    {languages.map((lang, index) => (
-                      <option key={index} value={lang.code}>
-                        {selectedLanguage.code === lang.code ? lang.code : `${lang.name} `}
-                      </option>
-                    ))}
-                  </select>
+                  <NavLink to="language" activeClassName="active">
+                    <TbWorld size='1.2rem' />
+                    <span>Language</span>
+                  
+                    <select className="dropdown-language" value={selectedLanguage.code} onChange={handleLanguageChange}>
+                      {languages.map((lang, index) => (
+                        <option key={index} value={lang.code}>
+                          {selectedLanguage.code === lang.code ? lang.code : `${lang.name} `}
+                        </option>
+                      ))}
+                    </select>
+                  </NavLink>
                 </li>
                 <li>
-                  <RiLogoutCircleRLine size='1.2rem' />
-                  <Link to="/logout">Log Out</Link>
+                  <NavLink to="logout" activeClassName="active">
+                    <RiLogoutCircleRLine size='1.2rem' />
+                    <span>Log Out</span>
+                  </NavLink>
                 </li>
               </ul>
             </nav>

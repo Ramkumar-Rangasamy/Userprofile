@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+//style.css
 import './manageAppointments.css';
+
+//react-iocns
 import { MdOutlineCalendarToday } from "react-icons/md";
 
 const ManageAppointments = () => {
   const [activeTab, setActiveTab] = useState('All');
-  const [visibleAppointments, setVisibleAppointments] = useState(4); // Initial number of visible appointments
+  const [visibleAppointments, setVisibleAppointments] = useState(5); // Default number of visible appointments
   const [statuses, setStatuses] = useState([
     { id: 1, doctor: "Dr. Pardhu", date: "12/10/24", time: "11.00 AM", status: "green" },
     { id: 2, doctor: "Dr. Pardhu", date: "12/10/24", time: "11.00 AM", status: "green" },
@@ -23,8 +26,6 @@ const ManageAppointments = () => {
     { id: 15, doctor: "Dr. Pardhu", date: "12/10/24", time: "11.00 AM", status: "green" },
     { id: 16, doctor: "Dr. Pardhu", date: "12/10/24", time: "11.00 AM", status: "green" },
     { id: 17, doctor: "Dr. Pardhu", date: "12/10/24", time: "11.00 AM", status: "orange" },
-  
-
   ]);
 
   const handleStatusChange = (id, newStatus) => {
@@ -33,12 +34,12 @@ const ManageAppointments = () => {
 
   const filteredStatuses = activeTab === 'All' ? statuses : statuses.filter(status => status.status === activeTab);
 
-  const loadMoreAppointments = () => {
-    setVisibleAppointments(prevVisibleAppointments => prevVisibleAppointments + 5);
-  };
-
-  const showLessAppointments = () => {
-    setVisibleAppointments(5); // Show only 5 appointments
+  const toggleAppointmentsVisibility = () => {
+    if (visibleAppointments === 5) {
+      setVisibleAppointments(filteredStatuses.length);
+    } else {
+      setVisibleAppointments(5);
+    }
   };
 
   return (
@@ -81,9 +82,9 @@ const ManageAppointments = () => {
           </tbody>
         </table>
       </div>
-      {filteredStatuses.length > 5 && ( // Only show "View More" if there are more than 5 appointments
-        <button className="view-all-button" onClick={visibleAppointments === 5 ? loadMoreAppointments : showLessAppointments}>
-          {visibleAppointments === 5 ? 'View More' : 'View Less'}
+      {filteredStatuses.length > 5 && (
+        <button className="view-all-button" onClick={toggleAppointmentsVisibility}>
+          {visibleAppointments === 5 ? 'View All' : 'View Less'}
         </button>
       )}
     </div>

@@ -4,7 +4,7 @@ import React from 'react';
 import './profileroutes.css'
 
 //We use Routes and Route in rect-router-dom
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route,Navigate} from 'react-router-dom'
 
 //All ProfileItem imported and Routed
 import ProfileLayout from '../ProfileLayout/ProfileLayout'
@@ -22,15 +22,17 @@ const ProfileRoutes = () => {
   return (
     <div className='profile-content-background-color'>
       <Routes>
-        <Route path="/Userprofile" element={<ProfileLayout/>}>
-          <Route path="manage-appointments" index element={<ManageAppointments/>} />
-          <Route path="my-profile" element={<Profileedit/>} />
+        <Route path="/userprofile" element={<ProfileLayout/>}>
+          <Route index path="/userprofile" element={<Navigate to="edit/profile" />} />
+          <Route path="manage/appointments" element={<ManageAppointments/>} />
+          <Route path="edit/profile" element={<Profileedit/>} />
           <Route path="inbox" element={<Inbox/>} />
           <Route path="prescriptions" element={<Prescriptions />} />
           <Route path="reviews" element={<Reviews/>} />
           <Route path="settings" element={<Settings />} />
           <Route path="notification" element={<Notification />} />
           <Route path="language" element={<Language />} />
+          <Route path="logout" element={<Language />} />
         </Route>
       </Routes>
     </div>
