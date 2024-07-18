@@ -7,7 +7,7 @@ import './profileroutes.css'
 import { Routes, Route,Navigate} from 'react-router-dom'
 
 //All ProfileItem imported and Routed
-import ProfileLayout from '../ProfileLayout/ProfileLayout'
+
 import  ManageAppointments   from '../ProfileItem/ManageAppointments/ManageAppointments'
 import Profileedit from '../ProfileItem/ProfileEdit/Profileedit'
 import Inbox from '../ProfileItem/Inbox/Inbox'
@@ -16,6 +16,7 @@ import Reviews from '../ProfileItem/Reviews/Reviews'
 import Settings from '../ProfileItem/Settings/Settings'
 import Notification from '../ProfileItem/Notification/Notification'
 import Language from '../ProfileItem/Language/Language'
+import ProfileLayout from '../ProfileLayout/ProfileLayout';
 
 
 const ProfileRoutes = () => {
@@ -27,7 +28,7 @@ const ProfileRoutes = () => {
           <Route path="manage/appointments" element={<ManageAppointments/>} />
           <Route path="edit/profile" element={<Profileedit/>} />
           <Route path="inbox" element={<Inbox/>} />
-          <Route path="prescriptions" element={<Prescriptions />} />
+          <Route path="prescription" element={<Prescriptions />} />
           <Route path="reviews" element={<Reviews/>} />
           <Route path="settings" element={<Settings />} />
           <Route path="notification" element={<Notification />} />

@@ -7,7 +7,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import './profilelayout.css';
 
 //Using image aslo and imported
-import profileimg from '../Assets/userprofile.jpeg';
+import profileimg from '../Assets/profileimg.png';
 
 //imported react-icons
 import { BsCardHeading } from "react-icons/bs";
@@ -77,7 +77,7 @@ const ProfileLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="prescriptions" activeClassName="active">
+                  <NavLink to="prescription" activeClassName="active">
                     <LiaFileAltSolid size='1.2rem' />
                     <span>Prescriptions</span>
                     <IoIosArrowForward />
