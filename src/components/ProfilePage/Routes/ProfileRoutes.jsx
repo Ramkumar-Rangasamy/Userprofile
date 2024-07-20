@@ -1,13 +1,9 @@
 import React from 'react';
-
 //style.css
 import './profileroutes.css'
-
 //We use Routes and Route in rect-router-dom
 import { Routes, Route, Navigate} from 'react-router-dom'
-
 //All ProfileItem imported and Routed
-
 import  ManageAppointments   from '../ProfileItem/ManageAppointments/ManageAppointments'
 import Profileedit from '../ProfileItem/ProfileEdit/Profileedit'
 import Inbox from '../ProfileItem/Inbox/Inbox'
@@ -16,10 +12,9 @@ import Reviews from '../ProfileItem/Reviews/Reviews'
 import Settings from '../ProfileItem/Settings/Settings'
 import Notification from '../ProfileItem/Notification/Notification'
 import Language from '../ProfileItem/Language/Language'
-import ProfileLayout from '../ProfileLayout/ProfileLayout';
-
-import DoctorLayout from '../ProfileLayout/DoctorLayout';
-
+import ProfileLayout from '../Layout/ProfileLayout';
+//imported doctor layout this page
+import DoctorLayout from '../Layout/DoctorLayout';
 const ProfileRoutes = () => {
   return (
     <div className='profile-content-background-color'>
