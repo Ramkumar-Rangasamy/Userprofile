@@ -4,7 +4,7 @@ import React from 'react';
 import './profileroutes.css'
 
 //We use Routes and Route in rect-router-dom
-import { Routes, Route,Navigate} from 'react-router-dom'
+import { Routes, Route, Navigate} from 'react-router-dom'
 
 //All ProfileItem imported and Routed
 
@@ -18,6 +18,7 @@ import Notification from '../ProfileItem/Notification/Notification'
 import Language from '../ProfileItem/Language/Language'
 import ProfileLayout from '../ProfileLayout/ProfileLayout';
 
+import DoctorLayout from '../ProfileLayout/DoctorLayout';
 
 const ProfileRoutes = () => {
   return (
@@ -33,7 +34,13 @@ const ProfileRoutes = () => {
           <Route path="settings" element={<Settings />} />
           <Route path="notification" element={<Notification />} />
           <Route path="language" element={<Language />} />
-          <Route path="logout" element={<Language />} />
+        </Route>
+        <Route path="/doctorprofile" element={<DoctorLayout/>}>
+          <Route index path="/doctorprofile" element={<Navigate to="edit/profile" />} />
+          <Route path="edit/profile" element={<Profileedit/>} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="language" element={<Language />} />
         </Route>
       </Routes>
     </div>

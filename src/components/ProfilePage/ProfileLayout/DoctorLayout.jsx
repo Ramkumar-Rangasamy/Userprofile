@@ -3,18 +3,12 @@ import React, { useState } from 'react';
 //imported react-router-dom in NavLink using active chnages and Outlet using right side showing profileItem
 import { NavLink, Outlet } from 'react-router-dom';
 
-//style.css
-import './profilelayout.css';
-
 //Using image aslo and imported
-import profileimg from '../Assets/profileimg.png';
+import profileimg from '../../ProfilePage/Assets/profileimg.png';
 
 //imported react-icons
-import { BsCardHeading } from "react-icons/bs";
 import { FiUser } from "react-icons/fi";
 import { MdOutlineInbox } from "react-icons/md";
-import { LiaFileAltSolid } from "react-icons/lia";
-import { FaRegStar } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { LuBell } from "react-icons/lu";
 import { TbWorld } from "react-icons/tb";
@@ -29,7 +23,7 @@ const languages = [
   { name: 'Chinese', code: 'CHN' }
 ];
 
-const ProfileLayout = () => {
+const DoctorLayout = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
   const [notificationStatus, setNotificationStatus] = useState('Allow');
 
@@ -45,7 +39,7 @@ const ProfileLayout = () => {
   return (
     <div className='layout-profile'>
       <div className='container'>
-        <h1>User Profile</h1>
+        <h1>Doctor Profile</h1>
         <div className="container-profile-head"> 
           <div className="profile-card">
             <div className="profile-content">
@@ -58,46 +52,26 @@ const ProfileLayout = () => {
             <nav>
               <ul>
                 <li>
-                  <NavLink to="manage/appointments" className={({ isActive }) => isActive ? 'active' : ''}>
-                    <BsCardHeading size='1.2rem' />
-                    <span>Manage Appointments</span>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="edit/profile" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="edit/profile" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <FiUser size='1.2rem' />
                     <span>My Profile</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="inbox" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="dashboard" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <MdOutlineInbox size='1.2rem' />
-                    <span>Inbox</span>
+                    <span>Dashboard</span>
                     <IoIosArrowForward />
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="prescription" className={({ isActive }) => isActive ? 'active' : ''}>
-                    <LiaFileAltSolid size='1.2rem' />
-                    <span>Prescriptions</span>
-                    <IoIosArrowForward />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="reviews" className={({ isActive }) => isActive ? 'active' : ''}>
-                    <FaRegStar size='1.2rem' />
-                    <span>Reviews</span>
-                    <IoIosArrowForward />
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="settings" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="settings" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <IoSettingsOutline size='1.2rem' />
                     <span>Settings</span>
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="notification" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="notification" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <LuBell size='1.2rem' />
                     <span>Notification</span>
                     <select className="dropdown-notification" value={notificationStatus} onChange={handleNotificationChange}>
@@ -107,7 +81,7 @@ const ProfileLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="language" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="language" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <TbWorld size='1.2rem' />
                     <span>Language</span>
                     <select className="dropdown-language" value={selectedLanguage.code} onChange={handleLanguageChange}>
@@ -120,7 +94,7 @@ const ProfileLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="logout" className={({ isActive }) => isActive ? 'active' : ''}>
+                  <NavLink to="logout" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <RiLogoutCircleRLine size='1.2rem' />
                     <span>Log Out</span>
                   </NavLink>
@@ -129,7 +103,7 @@ const ProfileLayout = () => {
             </nav>
           </div>
           <div className='outlet-content'>
-            <Outlet />
+            <Outlet/>
           </div>
         </div>
       </div>
@@ -137,4 +111,4 @@ const ProfileLayout = () => {
   );
 };
 
-export default ProfileLayout;
+export default DoctorLayout;
