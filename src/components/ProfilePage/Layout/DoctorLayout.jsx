@@ -58,7 +58,7 @@ const DoctorLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="dashboard" className={({ isActive }) => (isActive ? 'active' : undefined)}>
+                  <NavLink to="dashboardpage" target='_black' className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <MdOutlineInbox size='1.2rem' />
                     <span>Dashboard</span>
                     <IoIosArrowForward />
