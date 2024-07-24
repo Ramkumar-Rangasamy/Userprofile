@@ -7,7 +7,7 @@ import Booking from '../Pages/Booking/Booking';
 const ConnectedRoutes = () => {
   return (
     <Routes>
-      <Route path="/admin/dashboard" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Navigate to="manage" />} />
         <Route path="manage" element={<ManageAppointment />} />
         <Route path="booking" element={<Booking />} />
@@ -15,6 +15,6 @@ const ConnectedRoutes = () => {
       </Route>
     </Routes>
   );
-}
+};
 
 export default ConnectedRoutes;

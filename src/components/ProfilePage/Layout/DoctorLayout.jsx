@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 //imported react-router-dom in NavLink using active chnages and Outlet using right side showing profileItem
 import { NavLink, Outlet } from 'react-router-dom';
 
+import ExternalNavLink from './ExternalNavLink/ExternalNavLink';
+
 //Using image aslo and imported
 import profileimg from '../../ProfilePage/Assets/profileimg.png';
 
@@ -14,6 +16,8 @@ import { LuBell } from "react-icons/lu";
 import { TbWorld } from "react-icons/tb";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+
+
 
 const languages = [
   { name: 'English', code: 'ENG' },
@@ -58,11 +62,11 @@ const DoctorLayout = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="dashboardpage" target='_black' className={({ isActive }) => (isActive ? 'active' : undefined)}>
+                  <ExternalNavLink to="/doctorprofile/dashboardpage" className={({ isActive }) => (isActive ? 'active' : undefined)}>
                     <MdOutlineInbox size='1.2rem' />
                     <span>Dashboard</span>
                     <IoIosArrowForward />
-                  </NavLink>
+                  </ExternalNavLink>
                 </li>
                 <li>
                   <NavLink to="settings" className={({ isActive }) => (isActive ? 'active' : undefined)}>
