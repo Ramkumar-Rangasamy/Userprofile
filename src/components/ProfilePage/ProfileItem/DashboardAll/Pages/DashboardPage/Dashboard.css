@@ -30,25 +30,25 @@
 .dashboard-scroll-css {
   display: grid;
   grid-template-areas: 
-    "incoming-patient income profile"
+    "insight-patient income-head profile"
     "consultation booking-rate booking-rate"
     "reviews booking-rate booking-rate"
     "schedule schedule schedule";
     grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 25px;
   margin:5px 5px 30px 5px;
 }
 
-.incoming-patient {
-  grid-area: incoming-patient;
+.insight-patient {
+  grid-area: insight-patient;
   background: #FFFFFF;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px #0000001A;
 }
       
-.income {
-  grid-area: income;
+.income-head {
+  grid-area: income-head;
   background: #FFFFFF;
   padding: 20px;
   border-radius: 10px;
@@ -102,8 +102,8 @@
 @media (max-width: 991px) and (min-width: 768px) {
   .dashboard-scroll-css {
     grid-template-areas: 
-      "incoming-patient incoming-patient"
-      "income income"
+      "insight-patient insight-patient"
+      "income-head income-head"
       "profile profile"
       "consultation consultation"
       "reviews reviews"
@@ -117,8 +117,8 @@
 @media (max-width: 767px) {
   .dashboard-scroll-css {
     grid-template-areas: 
-      "incoming-patient"
-      "income"
+      "insight-patient"
+      "income-head"
       "profile"
       "consultation"
       "reviews"
@@ -126,5 +126,100 @@
       "schedule";
     grid-template-columns: 1fr;
   }
+}
+
+/*======================insight-patient =========start======================*/
+.insight-patient h3{
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.4px;
+  color: #272848;
+  margin-bottom: 20px;
+}
+
+.insight-item {
+  background: #F7FAFF;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding:5px;
+}
+
+.insight-item:last-child {
+  margin-bottom: 0;
+}
+
+.insight-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.insight-img.blue {
+  background-color: #007bff;
+}
+
+.insight-img.dark-blue {
+  background-color: #2A3F74;
+}
+
+.insight-img.green {
+  background-color: #4caf50;
+}
+.image-insight{
+  width: 30px;
+  height: 30px;
+}
+
+.insight-info h4 {
+  color: #A0AAC8;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0;
+}
+
+.insight-info p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 600;
+  margin: 0;
+}
+/*======================insight-patient =========End======================*/
+
+/*======================your income =========start======================*/
+
+
+.income {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.income h2{
+  color: #272848;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.4px;
+}
+
+
+.chart-select {
+  padding: 4px 10px 4px 10px;
+  background: #F7FAFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.bar-chart{
+  width: 300px;
+  height: 300px;
 }
 
