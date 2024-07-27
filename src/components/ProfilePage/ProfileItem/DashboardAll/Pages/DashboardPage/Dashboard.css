@@ -47,56 +47,8 @@
   box-shadow: 0 0 10px #0000001A;
 }
       
-.income-head {
-  grid-area: income-head;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001A;
-}
       
-.profile {
-  grid-area: profile;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #0000001A;
-}
 
-.consultation {
-  grid-area: consultation;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #0000001A;
-}
-      
-.reviews {
-  grid-area: reviews;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px #0000001A;
-}
-      
-.booking-rate {
-  grid-area: booking-rate;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001A;
-}
-      
-.schedule {
-  grid-area: schedule;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001A;
-}
 
 /* Tablet view: 768px to 1024px */
 @media (max-width: 991px) and (min-width: 768px) {
@@ -196,30 +148,461 @@
 
 /*======================your income =========start======================*/
 
+.income-head {
+  grid-area: income-head;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001A;
+}
 
 .income {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.income h2{
+
+.income h2 {
   color: #272848;
   font-size: 22px;
   font-weight: 600;
-  line-height: 26.4px;
+  margin: 0;
 }
 
-
 .chart-select {
-  padding: 4px 10px 4px 10px;
+  padding: 8px 16px;
   background: #F7FAFF;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
   font-weight: 500;
+  font-size: 14px;
+  color: #272848;
+  cursor: pointer;
 }
 
-.bar-chart{
-  width: 300px;
-  height: 300px;
+.chart-select option {
+  color: #272848;
 }
 
+.chart-area {
+  width: 100%;
+  max-width: 1200px; /* Increased max-width for a larger chart */
+  margin-top: 80px; /* Adjusted margin-top */
+}
+
+.bar-chart {
+  width: 44px;
+  height: 244px;
+}
+
+
+
+/*====================== your income end =========End======================*/
+
+
+/*====================== dashboard-profile =========start======================*/
+
+.profile {
+  grid-area: profile;
+  background: #FFFFFF;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #0000001A;
+}
+
+.dashboard-profile {
+  width: 100px;
+  height: 100px;
+  border-radius: 80px;
+}
+
+.dashboardprofile-name {
+  /* font-family: Poppins; */
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.dashboardprofile-subname {
+  /* font-family: Poppins; */
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: -18px;
+  color: #A0AAC8;
+}
+
+.dashboardprofile-logo {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 60px; /* Adjust the gap as needed */
+  justify-content: center;
+  align-items: start;
+  margin-top: -15px;
+}
+
+.content-background {
+  background: #F7FAFF;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.logo-background {
+  background: linear-gradient(180deg, #004EC4 0%, #0167FF 100%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.email {
+  width: 22px;
+  height: 22px;
+  margin-top: 12px;
+}
+
+.workload{
+  width: 23px;
+  height: 20px;
+  margin-top: 12px;
+}
+
+.Tick{
+  width: 22px;
+  height: 22px;
+  margin-top: 12px;
+}
+
+.logo-name {
+  /* font-family: Poppins; */
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.logo-count {
+  /* font-family: Poppins; */
+  font-size: 12px;
+  font-weight: 400;
+  color: #A0AAC8;
+  margin-top: -15px;
+  width: 60px;
+}
+
+
+/*====================== profile end =========End======================*/
+
+
+/*====================== consultation =========start======================*/
+
+.consultation {
+  grid-area: consultation;
+  background: #5577D1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #0000001A;
+}
+
+.consultation-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.consultation-count {
+  /* font-family: Matter; */
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 90px;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.consultation-label {
+  /* font-family: Poppins; */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  text-align: left;
+  color: #FFFFFF;
+
+
+  
+}
+
+.consultation-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.consultation-img {
+  margin-bottom: -32px;
+  width: 170px;
+  height: 150px;
+  margin-left: 20px;
+}
+
+/*====================== consultation end =========End======================*/
+
+
+/*====================== Review =========start======================*/
+
+
+
+.reviews {
+  grid-area: reviews;
+  background: #2A3F74;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px #0000001A;
+}
+
+.reviews-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.reviews-count {
+  /* font-family: Matter; */
+  font-size: 75px;
+  font-weight: 600;
+  line-height: 90px;
+  text-align: left;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.reviews-label {
+  /* font-family: Poppins; */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #FFFFFF;
+  text-align: left;
+  
+}
+
+.reviews-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.reviews-img {
+  width: 152px;
+  height: 142px;
+}
+
+/*====================== review end =========End======================*/
+
+
+/*====================== schedule =========start======================*/
+
+.schedule {
+  grid-area: schedule;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001A;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.recently {
+  padding: 8px 16px;
+  background: #F7FAFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #272848;
+  cursor: pointer;
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.schedule-header h2 {
+  /* font-family: Matter; */
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.4px;
+  color: #272848;
+  
+}
+
+/* .schedule-header select {
+  border: none;
+  background: #f5f5f5;
+  border-radius: 4px;
+  padding: 8px;
+} */
+
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background: #F7FAFF;
+}
+
+.day {
+  /* font-family: Poppins; */
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  text-align: center;
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.day span {
+  display: block;
+  /* font-family: Poppins; */
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+color: #A0AAC8;
+
+}
+
+.day.selected {
+  background: linear-gradient(180deg, #004EC4 0%, #0167FF 100%);
+  color: #fff;
+  width: 123px;
+  height: 82px;
+}
+
+.schedule-list {
+  padding: 16px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.time {
+  /* font-family: Poppins; */
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+text-align: left;
+  width: 150px;
+}
+
+.details {
+  flex: 3;
+  background: #F7FAFF;
+  margin-left: 10px;
+
+
+}
+
+.details-section{
+  display: flex;
+}
+
+.scheduleimg{
+  width: 25px;
+  height: 25px;
+margin-top: 12px;}
+
+.schedule-title {
+  /* font-family: Poppins; */
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25.5px;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.sub-details {
+  /* font-family: Poppins; */
+font-size: 12px;
+font-weight: 400;
+line-height: 18px;
+text-align: left;
+color: #A0AAC8;
+
+  margin-left: 10px;
+
+}
+
+
+/*====================== schedule end =========End======================*/
+
+
+/*====================== booking rate =========start======================*/
+
+.booking-rate {
+  grid-area: booking-rate;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001A;
+
+}
+
+.booking-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+
+.booking-title {
+  font-family: Matter;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.4px;
+  /* margin: 0; */
+  
+}
+
+.booking-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rate {
+  max-width: 200px;
+}
+
+.booking-percentage {
+  color: #00A500;
+
+}
+
+.increase {
+  color: #a0aac8;
+}
+
+.chart {
+  width: 70%;
+}
