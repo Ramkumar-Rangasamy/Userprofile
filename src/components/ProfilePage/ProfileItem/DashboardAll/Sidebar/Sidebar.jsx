@@ -13,7 +13,7 @@ import brandLogo from '../Assets/brand-logo.png';
 
 const Sidebar = () => {
   const location = useLocation();
-  const [activeItem, setActiveItem] = useState('/doctorprofile/dashboardpage/start-dashboard');
+  const [activeItem, setActiveItem] = useState(location.pathname);
   const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 768);
 
   useEffect(() => {
@@ -54,50 +54,72 @@ const Sidebar = () => {
         )}
       </div>
       <ul className="sidebar-menu">
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/start-dashboard' ? 'active' : ''}`}>
+       
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/start-dashboard' ? 'active' : ''}`}
+          onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/start-dashboard')}
+          onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/start-dashboard" className="menu-link">
             <div className="sidebar-icon"><FaHome /></div>
             <span>Dashboard</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/manage' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/manage' ? 'active' : ''}`}
+           onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/manage')}
+           onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/manage" className="menu-link">
             <div className="sidebar-icon"><RiCalendarCheckLine /></div>
             <span>Appointments</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/calender' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/calender' ? 'active' : ''}`}
+          onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/calender')}
+          onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/calender" className="menu-link">
             <div className="sidebar-icon"><FaChartBar /></div>
             <span>Calendar</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/patient' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/patient' ? 'active' : ''}`}
+         onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/patient')}
+         onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/patient" className="menu-link">
             <div className="sidebar-icon"><FaRegFileAlt /></div>
             <span>My Patient</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/inbox' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/inbox' ? 'active' : ''}`}
+          onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/inbox')}
+          onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/inbox" className="menu-link">
             <div className="sidebar-icon"><RiInboxLine /></div>
             <span>Inbox</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/reviews' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/reviews' ? 'active' : ''}`}
+         onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/reviews')}
+         onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/reviews" className="menu-link">
             <div className="sidebar-icon"><TbStar /></div>
             <span>Reviews</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/blog' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/blog' ? 'active' : ''}`}
+         onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/blog')}
+         onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/blog" className="menu-link">
             <div className="sidebar-icon"><ImBlogger2 /></div>
             <span>Blog</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/other-reports' ? 'active' : ''}`}>
-          <Link to="/doctorprofile/dashboardpage/other-reports" className="menu-link">
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/Logout' ? 'active' : ''}`}>
+          <Link to="/doctorprofile/dashboardpage/Logout" className="menu-link">
             <div className="sidebar-icon"><RiLogoutCircleRLine /></div>
             <span>Logout</span>
           </Link>
