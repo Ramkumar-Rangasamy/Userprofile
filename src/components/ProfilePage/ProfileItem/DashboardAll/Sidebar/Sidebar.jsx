@@ -118,7 +118,10 @@ const Sidebar = () => {
             <span>Blog</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/Logout' ? 'active' : ''}`}>
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/Logout' ? 'active' : ''}`}
+         onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/Logout')}
+         onMouseLeave={() => setActiveItem(location.pathname)}
+        >
           <Link to="/doctorprofile/dashboardpage/Logout" className="menu-link">
             <div className="sidebar-icon"><RiLogoutCircleRLine /></div>
             <span>Logout</span>

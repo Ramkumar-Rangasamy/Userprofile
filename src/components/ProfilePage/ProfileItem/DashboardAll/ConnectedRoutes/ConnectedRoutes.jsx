@@ -13,7 +13,7 @@ const ConnectedRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="start-dashboard" />} />
+        <Route index path="/" element={<Navigate to="start-dashboard"/>} />
         <Route path="start-dashboard" element={<DashboardPage />} />
         <Route path="manage" element={<ManageAppointment />} />
         <Route path="calender" element={<Calendar />} />
