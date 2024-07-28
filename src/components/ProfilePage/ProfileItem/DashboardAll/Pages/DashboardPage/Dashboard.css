@@ -34,10 +34,11 @@
     "consultation booking-rate booking-rate"
     "reviews booking-rate booking-rate"
     "schedule schedule schedule";
-    grid-template-columns: repeat(3, 1fr);
-  grid-gap: 25px;
+    grid-template-columns: repeat(10fr,10fr,10fr);
+  grid-gap: 20px;
   margin:5px 5px 30px 5px;
 }
+
 
 .insight-patient {
   grid-area: insight-patient;
@@ -151,7 +152,7 @@
 .income-head {
   grid-area: income-head;
   background: #FFFFFF;
-  padding: 20px;
+  padding: 20px 10px 0px 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px #0000001A;
 }
@@ -160,7 +161,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .income h2 {
@@ -171,7 +172,7 @@
 }
 
 .chart-select {
-  padding: 8px 16px;
+  padding: 5px 10px;
   background: #F7FAFF;
   border: 1px solid #CCCCCC;
   border-radius: 5px;
@@ -186,15 +187,28 @@
 }
 
 .chart-area {
-  width: 100%;
-  max-width: 1200px; /* Increased max-width for a larger chart */
-  margin-top: 80px; /* Adjusted margin-top */
+  height:200px; /* Adjust height to make chart responsive */
+  max-width:300px;
+  margin-top: 20px;
 }
 
-.bar-chart {
-  width: 44px;
-  height: 244px;
+@media (max-width: 768px) {
+  .chart-area {
+    margin-right: 0;
+    height: 250px; /* Adjust height for mobile view */
+  }
+
+  .income {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-select {
+    margin-top: 10px;
+  }
 }
+
+
 
 
 
@@ -410,153 +424,6 @@
 /*====================== review end =========End======================*/
 
 
-/*====================== schedule =========start======================*/
-
-.schedule {
-  grid-area: schedule;
-  background: #FFFFFF;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0000001A;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.recently {
-  padding: 8px 16px;
-  background: #F7FAFF;
-  border: 1px solid #CCCCCC;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 14px;
-  color: #272848;
-  cursor: pointer;
-}
-
-.schedule-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-.schedule-header h2 {
-  /* font-family: Matter; */
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 26.4px;
-  color: #272848;
-  
-}
-
-/* .schedule-header select {
-  border: none;
-  background: #f5f5f5;
-  border-radius: 4px;
-  padding: 8px;
-} */
-
-.calendar {
-  display: flex;
-  justify-content: space-between;
-  padding: 16px;
-  background: #F7FAFF;
-}
-
-.day {
-  /* font-family: Poppins; */
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 33px;
-  text-align: left;
-  text-align: center;
-  flex: 1;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.day span {
-  display: block;
-  /* font-family: Poppins; */
-font-size: 18px;
-font-weight: 400;
-line-height: 27px;
-color: #A0AAC8;
-
-}
-
-.day.selected {
-  background: linear-gradient(180deg, #004EC4 0%, #0167FF 100%);
-  color: #fff;
-  width: 123px;
-  height: 82px;
-}
-
-.schedule-list {
-  padding: 16px;
-}
-
-.schedule-item {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-}
-
-.schedule-item:last-child {
-  border-bottom: none;
-}
-
-.time {
-  /* font-family: Poppins; */
-font-size: 18px;
-font-weight: 400;
-line-height: 27px;
-text-align: left;
-  width: 150px;
-}
-
-.details {
-  flex: 3;
-  background: #F7FAFF;
-  margin-left: 10px;
-
-
-}
-
-.details-section{
-  display: flex;
-}
-
-.scheduleimg{
-  width: 25px;
-  height: 25px;
-margin-top: 12px;}
-
-.schedule-title {
-  /* font-family: Poppins; */
-  font-size: 17px;
-  font-weight: 600;
-  line-height: 25.5px;
-  text-align: left;
-  margin-left: 10px;
-}
-
-.sub-details {
-  /* font-family: Poppins; */
-font-size: 12px;
-font-weight: 400;
-line-height: 18px;
-text-align: left;
-color: #A0AAC8;
-
-  margin-left: 10px;
-
-}
-
-
-/*====================== schedule end =========End======================*/
-
-
 /*====================== booking rate =========start======================*/
 
 .booking-rate {
@@ -576,7 +443,6 @@ color: #A0AAC8;
 
 
 .booking-title {
-  font-family: Matter;
   font-size: 22px;
   font-weight: 600;
   line-height: 26.4px;
@@ -606,3 +472,181 @@ color: #A0AAC8;
 .chart {
   width: 70%;
 }
+
+/*====================== schedule =========start ======================*/
+.schedule {
+  grid-area: schedule;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.schedule .schedule-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+}
+
+.schedule-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26.4px;
+  color: #272848;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+}
+
+.schedule-header .recently {
+  padding: 5px 50px 5px 10px;
+  background: #f7faff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #272848;
+  cursor: pointer;
+  -webkit-appearance: none; /* For Chrome */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* For modern browsers */
+  outline: none;
+}
+
+.arrow-icon-filter {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ff7f50;
+  pointer-events: none;
+}
+
+.schedule-container .calendar {
+  display: flex;
+  justify-content: space-between;
+  background: #f7faff;
+  margin: 0px 28px 0px 20px;
+}
+
+.schedule-container .calendar button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.schedule-container .calendar button .icon-arrow-calendar {
+  color: #272848;
+}
+
+.schedule-container .calendar .day {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.schedule-container .calendar .day span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #a0aac8;
+}
+
+.schedule-container .calendar .day.selected {
+  background: linear-gradient(180deg, #004ec4 0%, #0167ff 100%);
+  color: #fff;
+}
+
+.schedule-container .schedule-list {
+  padding: 13px;
+  max-height: 270px; /* Adjust this height to show 3 items */
+  overflow-y: auto;
+}
+
+.schedule-container .schedule-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.schedule-container .schedule-list::-webkit-scrollbar-thumb {
+  background: #5577d1;
+  opacity: 90%;
+  border-radius: 10px;
+}
+
+.schedule-list .schedule-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.schedule-list .schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-list .schedule-item .time {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  width: 200px;
+}
+
+.schedule-list .schedule-item .details {
+  flex: 3;
+  background: #f7faff;
+  border-radius: 8px;
+  border-left: 10px solid #2a3f74;
+}
+
+.schedule-list .schedule-item .details .details-section {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 10px;
+}
+
+.schedule-list .schedule-item .details .details-section .schedule-image-container {
+  background: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.schedule-list .schedule-item .details .details-section .schedule-image-container .scheduleimg {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+}
+
+.schedule-list .schedule-item .details .details-section .schedule-title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25.5px;
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.schedule-list .schedule-item .details .details-section .sub-details {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  color: #a0aac8;
+  margin-left: 10px;
+}
+
+
+/*====================== schedule end =========End======================*/
