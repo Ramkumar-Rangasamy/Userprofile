@@ -29,8 +29,8 @@ const Yourincome = () => {
         ],
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false, // Allow the chart to resize freely
+        // responsive: true,
+        // maintainAspectRatio: false, // Allow the chart to resize freely
         plugins: {
           legend: {
             display: false,
@@ -55,6 +55,8 @@ const Yourincome = () => {
                 weight: 'bold', // Make the labels bold for better readability
               },     
               color: '#272848', // Set the color of x-axis labels
+              autoSkip: true,
+
               padding: 5, // Increase padding for more space
             },
           },
@@ -72,7 +74,9 @@ const Yourincome = () => {
                 weight: 'bold', // Make the labels bold for better readability
               },     
               color: '#272848', // Set the color of y-axis labels
-              padding: 5, // Increase padding for more space
+              autoSkip: true,
+
+              padding:5, // Increase padding for more space
             },
             beginAtZero: true,
           },

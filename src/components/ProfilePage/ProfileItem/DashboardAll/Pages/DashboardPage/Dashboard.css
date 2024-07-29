@@ -187,20 +187,23 @@
 }
 
 .chart-area {
-  height:200px; /* Adjust height to make chart responsive */
-  max-width:300px;
-  margin-top: 20px;
+ width: 415px;
+ height: 200px;
+  margin-top: 80px;
 }
 
 @media (max-width: 768px) {
   .chart-area {
     margin-right: 0;
-    height: 250px; /* Adjust height for mobile view */
-  }
+    height: 200px; 
+    margin-left: 80px;
+    margin-top: 40px;
+}
 
   .income {
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column;
+    align-items: flex-start; */
+    display: flex;
   }
 
   .chart-select {
@@ -208,6 +211,12 @@
   }
 }
 
+@media (max-width: 480px) {
+
+  .chart-area {
+    margin-left: 30px;
+  }
+}
 
 
 
@@ -296,6 +305,8 @@
   font-size: 14px;
   font-weight: 600;
   margin-top: 15px;
+  width: 100px;
+  margin-left: -25px;
 }
 
 .logo-count {
@@ -304,7 +315,8 @@
   font-weight: 400;
   color: #A0AAC8;
   margin-top: -15px;
-  width: 60px;
+  width: 80px;
+  margin-left: -15px;
 }
 
 
@@ -334,7 +346,7 @@
   /* font-family: Matter; */
   font-size: 75px;
   font-weight: 600;
-  line-height: 90px;
+  line-height: 70px;
   text-align: left;
   color: #FFFFFF;
 }
@@ -344,9 +356,9 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
-  text-align: left;
   color: #FFFFFF;
-
+  text-align: left;
+ margin-left: 10px;
 
   
 }
@@ -359,7 +371,7 @@
 }
 
 .consultation-img {
-  margin-bottom: -32px;
+  margin-bottom: -20px;
   width: 170px;
   height: 150px;
   margin-left: 20px;
@@ -418,7 +430,7 @@
 
 .reviews-img {
   width: 152px;
-  height: 142px;
+  height: 132px;
 }
 
 /*====================== review end =========End======================*/
@@ -438,19 +450,22 @@
 .booking-header{
   display: flex;
   justify-content: space-between;
-  padding: 16px;
 }
 
 
 .booking-title {
+  /* font-family: Matter; */
   font-size: 22px;
   font-weight: 600;
   line-height: 26.4px;
-  /* margin: 0; */
+  text-align: left;
+  color: #272848;
+
   
 }
 
 .booking-area {
+/* margin-top: 80px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -460,17 +475,163 @@
   max-width: 200px;
 }
 
-.booking-percentage {
+.rate h1{
+    /* font-family: Poppins; */
+font-size: 70px;
+font-weight: 600;
+line-height: 50px;
+text-align: left;
   color: #00A500;
-
 }
+
+
+.booking-description {
+  /* font-family: Matter; */
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  text-align: left;
+  color: #272848;
+  
+}
+
+
 
 .increase {
-  color: #a0aac8;
-}
+  /* font-family: Matter; */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.8px;
+  text-align: left;
+  color: #A0AAC8;
+
+  }
 
 .chart {
-  width: 70%;
+  margin-top: 80px;
+  width: 460px;
+  height: 230px;
+}
+
+.recently{
+  padding: 5px 10px;
+  background: #F7FAFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #272848;
+  cursor: pointer;
+}
+
+
+.icon-with-text {
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  font-size: 24px; /* Adjust size as needed */
+  fill: #00A500;
+}
+
+
+.icon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px; /* Adjust size as needed */
+  pointer-events: none; /* Ensure text doesn't interfere with icon clicks */
+  color: white; /* Adjust color as needed */
+}
+
+/* mobile responsive of booking-rate */
+
+@media (max-width: 768px) {
+  .booking-rate {
+    padding: 15px;
+    box-shadow: 0 0 8px #0000001A;
+  }
+
+  .booking-header {
+    /* flex-direction: column;
+    align-items: flex-start; */
+    display: flex;
+  }
+
+  .booking-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .booking-area {
+    /* flex-direction: column;
+    align-items: flex-start; */
+    display: flex;
+  }
+
+  .rate {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .rate h1 {
+    font-size: 50px;
+    line-height: 40px;
+  }
+
+  .booking-description {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .increase {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .chart {
+    width: 65%;
+    height: auto;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-rate {
+    padding: 10px;
+    box-shadow: 0 0 5px #0000001A;
+  }
+
+  .booking-title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .rate h1 {
+    font-size: 40px;
+    line-height: 35px;
+  }
+
+  .booking-description {
+    font-size: 18px;
+    line-height: 22px;
+    margin-right: 40px;
+  }
+
+  .increase {
+    font-size: 10px;
+    line-height: 12px;
+    margin-right: 40px;
+
+  }
+
+  .chart {
+    width: 250px;
+    height: 120px;
+    margin-top: 40px;
+  }
 }
 
 /*====================== schedule =========start ======================*/

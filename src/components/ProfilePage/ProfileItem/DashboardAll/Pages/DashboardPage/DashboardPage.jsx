@@ -1,6 +1,5 @@
 import React from 'react'
 import './Dashboard.css';
-
 import  reviewsImg from './Assets/reviewsImg.png';
 import consultationimg from './Assets/consultationimg.png';
 import Tick from './Assets/Tick.png';
