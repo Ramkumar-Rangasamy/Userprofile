@@ -58,8 +58,8 @@ const data = {
   
   // Chart options
   const options = {
-    // responsive: true,
-    // maintainAspectRatio: true,
+    responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         display: false, // Hide the legend
