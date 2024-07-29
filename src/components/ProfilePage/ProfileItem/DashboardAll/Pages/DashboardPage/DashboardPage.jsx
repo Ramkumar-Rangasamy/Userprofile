@@ -66,19 +66,22 @@ const DashboardPage = () => {
             <p className='dashboardprofile-subname'>xxxx specialist</p>
             <div className='dashboardprofile-logo'>
               <div className='content-background'>
-                <div  className='logo-background'><img src={workload} className='workload'/>
+                <div  className='logo-background'>
+                  <img src={workload} className='workload'/>
                   <p className='logo-name'>Total Patients</p>
                   <p className='logo-count'>16 patients</p>
                 </div>
               </div>
               <div className='content-background'>
-                <div  className='logo-background'><img src={Tick} className='Tick'/>
+                <div  className='logo-background'>
+                  <img src={Tick} className='Tick'/>
                   <p className='logo-name'>Available</p>
                   <p className='logo-count'>22/50</p>
                 </div>
               </div>
               <div className='content-background'>
-                <div  className='logo-background'><img src={email} className='email'/>
+                <div  className='logo-background'>
+                  <img src={email} className='email'/>
                   <p className='logo-name'>Messages</p>
                   <p className='logo-count'>24</p>
                 </div>
@@ -86,7 +89,6 @@ const DashboardPage = () => {
             </div>
           </div>
 
-   
           {/* consultation */}
           <div className="consultation">
             <div className='consultation-area'>
@@ -94,9 +96,7 @@ const DashboardPage = () => {
                 <h2 className='consultation-count'>160+</h2>
                 <p className='consultation-label'>Consultation</p>
               </div>
-              <div className='consultation-img-container'>
-                <img src={consultationimg} className='consultation-img' />
-              </div>
+              <img src={consultationimg} className='consultation-img' />
             </div>
           </div>
 
@@ -108,9 +108,7 @@ const DashboardPage = () => {
                 <h2 className='reviews-count'>250+</h2>
                 <p className='reviews-label'>Patient's reviews</p>
               </div>
-              <div className='reviews-img-container'>
-                <img src={reviewsImg} className='reviews-img' alt="Reviews icon"/>
-              </div>
+              <img src={reviewsImg} className='reviews-img' alt="Reviews icon"/>
             </div>
           </div>  
 
@@ -119,8 +117,6 @@ const DashboardPage = () => {
           
            <BookingRate/>
           
-
-
           {/* Schedule */}
           <div className="schedule">
             <Schedule/>

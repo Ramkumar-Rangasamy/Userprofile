@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './Dashboard.css';
 import { Chart } from 'chart.js/auto';
-
+import { RiArrowDownSLine } from "react-icons/ri";
 const Yourincome = () => {
   // income chart
   const chartRef = useRef(null);
@@ -52,10 +52,11 @@ const Yourincome = () => {
             ticks: {
               font: {
                 size: 10, 
-                weight: 'bold', // Make the labels bold for better readability
+                weight: '400', // Make the labels bold for better readability
               },     
               color: '#272848', // Set the color of x-axis labels
               autoSkip: true,
+              
 
               padding: 5, // Increase padding for more space
             },
@@ -71,12 +72,12 @@ const Yourincome = () => {
               callback: (value) => `$${value / 1000}k`,
               font: {
                 size: 10, 
-                weight: 'bold', // Make the labels bold for better readability
+                weight: '400', // Make the labels bold for better readability
               },     
               color: '#272848', // Set the color of y-axis labels
               autoSkip: true,
 
-              padding:5, // Increase padding for more space
+              padding:0, // Increase padding for more space
             },
             beginAtZero: true,
           },
@@ -95,12 +96,15 @@ const Yourincome = () => {
     <div className="income-head">
       <div className="income">
         <h2>Your Income</h2>
-        <select className="chart-select">
-          <option>Last 5 months</option>
-        </select>
+        <div className="select-container">
+          <select className="chart-select">
+            <option>Last 5 months</option>
+          </select>
+          <RiArrowDownSLine className="arrow-icon-filter" />
+        </div>  
       </div>
       <div className='chart-area'>
-        <canvas ref={chartRef} id="incomeChart" className='bar-chart'></canvas>
+        <canvas ref={chartRef} id="incomeChart"></canvas>
       </div>
     </div>
   );
