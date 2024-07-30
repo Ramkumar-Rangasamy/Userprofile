@@ -34,9 +34,9 @@
     "consultation booking-rate booking-rate"
     "reviews booking-rate booking-rate"
     "schedule schedule schedule";
-    grid-template-columns: repeat(10fr,10fr,10fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  margin:5px 5px 10px 5px;
+  margin: 5px 5px 10px 5px;
 }
 
 .insight-patient {
@@ -93,17 +93,14 @@
 
 .schedule {
   grid-area: schedule;
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px #0000001a;
+  box-shadow: 0 0 10px #0000001A;
 }
-      
-      
-
 
 /* Tablet view: 768px to 1024px */
-@media (max-width: 1024px){
+@media (max-width: 1024px) {
   .dashboard-scroll-css {
     grid-template-areas: 
       "insight-patient insight-patient"
@@ -128,9 +125,10 @@
       "reviews"
       "booking-rate"
       "schedule";
-    grid-template-columns: 10fr;
+    grid-template-columns: 1fr;
   }
 }
+
 
 /*======================insight-patient =========start======================*/
 .insight-patient h3{
@@ -419,8 +417,8 @@
 
 .consultation-img {
   margin-bottom: -20px;
-  width: 110px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   margin-left: 20px;
 }
 
@@ -478,7 +476,8 @@
 }
 
 .reviews-img {
-  width: 110px;
+  margin-bottom: -20px;
+  width: 130px;
   height: 130px;
 }
 

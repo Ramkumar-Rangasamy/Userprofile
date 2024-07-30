@@ -31,7 +31,7 @@ const YourIncome = () => {
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false, // Allow the chart to resize freely
+        maintainAspectRatio: true, // Allow the chart to resize freely
         plugins: {
           legend: {
             display: false,
