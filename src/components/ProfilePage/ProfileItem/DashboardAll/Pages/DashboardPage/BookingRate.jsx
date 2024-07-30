@@ -99,7 +99,7 @@ const BookingRate = () => {
     },
   };
   return (
-    <div className="booking-rate">
+    <>
       <div className='booking-header'>
         <h2 className="booking-title">Booking Rate</h2>
         <div className="select-container">
@@ -119,7 +119,7 @@ const BookingRate = () => {
           <Bar ref={chartRef} data={data} options={options}/>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

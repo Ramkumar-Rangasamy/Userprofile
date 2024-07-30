@@ -57,7 +57,9 @@ const DashboardPage = () => {
           </div>
 
           {/* income */}
-          <Yourincome/>
+          <div className="income-head">
+            <Yourincome/>
+          </div>
 
           {/* profile */}
           <div className="profile">
@@ -114,8 +116,9 @@ const DashboardPage = () => {
 
 
           {/* booking area */}
-          
-           <BookingRate/>
+          <div className="booking-rate">
+            <BookingRate/>
+          </div>
           
           {/* Schedule */}
           <div className="schedule">

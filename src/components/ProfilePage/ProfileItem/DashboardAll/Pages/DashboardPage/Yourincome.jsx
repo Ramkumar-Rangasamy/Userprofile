@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import './Dashboard.css';
 import { Chart } from 'chart.js/auto';
 import { RiArrowDownSLine } from "react-icons/ri";
-const Yourincome = () => {
+
+const YourIncome = () => {
   // income chart
   const chartRef = useRef(null);
   const chartInstance = useRef(null); // To store the chart instance
@@ -56,8 +57,6 @@ const Yourincome = () => {
               },     
               color: '#272848', // Set the color of x-axis labels
               autoSkip: true,
-              
-
               padding: 5, // Increase padding for more space
             },
           },
@@ -76,8 +75,7 @@ const Yourincome = () => {
               },     
               color: '#272848', // Set the color of y-axis labels
               autoSkip: true,
-
-              padding:0, // Increase padding for more space
+              padding: 0, // Increase padding for more space
             },
             beginAtZero: true,
           },
@@ -93,7 +91,7 @@ const Yourincome = () => {
   }, []);
 
   return (
-    <div className="income-head">
+    <>
       <div className="income">
         <h2>Your Income</h2>
         <div className="select-container">
@@ -106,8 +104,8 @@ const Yourincome = () => {
       <div className='chart-area'>
         <canvas ref={chartRef} id="incomeChart"></canvas>
       </div>
-    </div>
+    </>
   );
 }
 
-export default Yourincome;
+export default YourIncome;
