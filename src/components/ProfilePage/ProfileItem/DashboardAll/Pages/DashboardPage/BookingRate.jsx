@@ -3,20 +3,17 @@ import './Dashboard.css';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { RiArrowDownSLine } from "react-icons/ri";
-const BookingRate = () => {
-  
-  // Register components
-    ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-  //charts gradient color function
-    const chartRef = useRef(null);
+const BookingRate = () => {
+  ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+  const chartRef = useRef(null);
 
   useEffect(() => {
     const chart = chartRef.current;
     if (chart) {
       const ctx = chart.ctx;
 
-      // Define gradients
       const gradientBlue = ctx.createLinearGradient(0, 0, 0, 300);
       gradientBlue.addColorStop(0, '#0041E7');
       gradientBlue.addColorStop(1, '#2A3F74');
@@ -25,13 +22,12 @@ const BookingRate = () => {
       gradientGreen.addColorStop(0, '#00A500');
       gradientGreen.addColorStop(1, '#008200');
 
-      // Apply gradients
       chart.data.datasets[0].backgroundColor = [
         gradientBlue,
         gradientBlue,
         gradientBlue,
         gradientBlue,
-        gradientGreen, // Special color for the fifth bar
+        gradientGreen,
         gradientBlue,
         gradientBlue
       ];
@@ -39,65 +35,62 @@ const BookingRate = () => {
     }
   }, []);
 
-  // booking chart
   const data = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
       {
         label: 'Booking Rate',
-        data: [4, 2, 4, 4, 8, 2, 4], // Your data values
-        borderRadius:3,
+        data: [4, 2, 4, 4, 8, 2, 4],
+        borderRadius: 3,
         borderSkipped: false,
-
-      }, 
-
+      },
     ],
   };
-  
-  // Chart options
+
   const options = {
     responsive: true,
     maintainAspectRatio: true,
     plugins: {
       legend: {
-        display: false, // Hide the legend
+        display: false,
       },
       tooltip: {
         callbacks: {
-          label: function(context) {
-            return `${context.raw * 10}%`; // Customize tooltip label
+          label: function (context) {
+            return `${context.raw * 10}%`;
           }
         }
       }
     },
     scales: {
       y: {
-        beginAtZero: true, // Start the y-axis at zero
+        beginAtZero: true,
         grid: {
-          display: false, // Hide y-axis grid lines
+          display: false,
         },
         ticks: {
           font: {
-            size: 10, 
-            weight: 'bold', // Make the labels bold for better readability
+            size: 10,
+            weight: 'bold',
           },
-          color: '#A0AAC8', // Set the color of y-axis labels
+          color: '#A0AAC8',
         },
       },
       x: {
         grid: {
-          display: false, // Hide x-axis grid lines
+          display: false,
         },
         ticks: {
           font: {
-            size: 10, 
-            weight: 'bold', // Make the labels bold for better readability
+            size: 10,
+            weight: 'bold',
           },
-          color: '#A0AAC8', // Set the color of x-axis labels
+          color: '#A0AAC8',
         },
       },
     },
   };
+
   return (
     <>
       <div className='booking-header'>
@@ -112,15 +105,15 @@ const BookingRate = () => {
       <div className="booking-area">
         <div className="rate">
           <h1 className="booking-number">80%</h1>
-          <p className='booking-description'>Your total<br/> patient on Friday</p>
+          <p className='booking-description'>Your total<br /> patient on Friday</p>
           <p className="increase">Your booking rate is 6% increase than previous day</p>
         </div>
         <div className="chart">
-          <Bar ref={chartRef} data={data} options={options}/>
+          <Bar ref={chartRef} data={data} options={options} />
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default BookingRate
+export default BookingRate;

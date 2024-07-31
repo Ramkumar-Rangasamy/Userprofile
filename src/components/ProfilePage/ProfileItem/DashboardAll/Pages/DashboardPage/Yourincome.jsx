@@ -4,9 +4,8 @@ import { Chart } from 'chart.js/auto';
 import { RiArrowDownSLine } from "react-icons/ri";
 
 const YourIncome = () => {
-  // income chart
   const chartRef = useRef(null);
-  const chartInstance = useRef(null); // To store the chart instance
+  const chartInstance = useRef(null);
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
@@ -18,20 +17,20 @@ const YourIncome = () => {
     chartInstance.current = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Mar', 'Apr', 'Jun', 'July', 'August'],
+        labels: ['Mar', 'Apr', 'Jun', 'Jul', 'Aug'],
         datasets: [
           {
             label: 'Income',
             data: [5000, 15000, 10000, 20000, 15000],
             backgroundColor: ['#007bff', '#007bff', '#007bff', '#FF5733', '#007bff'],
-            borderRadius: 5,
+            borderRadius: 4,
             borderSkipped: false,
           },
         ],
       },
       options: {
         responsive: true,
-        maintainAspectRatio: true, // Allow the chart to resize freely
+        maintainAspectRatio: false, // Allow the chart to resize freely
         plugins: {
           legend: {
             display: false,
@@ -52,9 +51,9 @@ const YourIncome = () => {
             },
             ticks: {
               font: {
-                size: 10, 
+                size: 10,
                 weight: '400', // Make the labels bold for better readability
-              },     
+              },
               color: '#272848', // Set the color of x-axis labels
               autoSkip: true,
               padding: 5, // Increase padding for more space
@@ -70,12 +69,13 @@ const YourIncome = () => {
             ticks: {
               callback: (value) => `$${value / 1000}k`,
               font: {
-                size: 10, 
+                size: 10,
                 weight: '400', // Make the labels bold for better readability
-              },     
+              },
               color: '#272848', // Set the color of y-axis labels
-              autoSkip: true,
+              autoSkip: false,
               padding: 0, // Increase padding for more space
+              stepSize: 5000, // Set the step size to 5000 to get custom labels
             },
             beginAtZero: true,
           },
@@ -93,13 +93,15 @@ const YourIncome = () => {
   return (
     <>
       <div className="income">
-        <h2>Your Income</h2>
-        <div className="select-container">
-          <select className="chart-select">
-            <option>Last 5 months</option>
-          </select>
-          <RiArrowDownSLine className="arrow-icon-filter" />
-        </div>  
+        <div className='dashboard-head-common'>
+          <p>Your Income</p>
+          <div className="select-container">
+            <select className="select-box-common">
+              <option>This month</option>
+            </select>
+            <RiArrowDownSLine className="arrow-icon-filter" />
+          </div>
+        </div>
       </div>
       <div className='chart-area'>
         <canvas ref={chartRef} id="incomeChart"></canvas>
