@@ -6,8 +6,8 @@
 
 .main-content {
   flex-grow: 1;
-  margin-left: 300px;
-  transition: margin-left 0.3s;
+  width: calc(100% - 300px);
+  transition: width 0.3s;
   margin: 20px 20px 0px 0px;
   border-top-right-radius: 60px; 
   border-top-left-radius: 60px;

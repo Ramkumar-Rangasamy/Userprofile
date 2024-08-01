@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './sidebar.css';
-import { FaHome, FaChartBar, FaRegFileAlt, FaBars } from 'react-icons/fa';
+import { FaHome, FaRegFileAlt, FaBars } from 'react-icons/fa';
+import { PiStorefrontBold } from "react-icons/pi";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { CgList } from "react-icons/cg";
 import { FiX } from 'react-icons/fi';
 import { RiInboxLine } from 'react-icons/ri';
 import { TbStar } from 'react-icons/tb';
-import { RiCalendarCheckLine } from 'react-icons/ri';
+import { PiUserListBold } from "react-icons/pi";
 import { ImBlogger2 } from 'react-icons/im';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 import { Link, useLocation } from 'react-router-dom';
 
-import brandLogo from '../Assets/brand-logo.png';
+import brandLogo from '../Assets/brand-logo-2.png';
 
 const Sidebar = () => {
   const location = useLocation();
@@ -60,7 +63,7 @@ const Sidebar = () => {
           onMouseLeave={() => setActiveItem(location.pathname)}
         >
           <Link to="/doctorprofile/dashboardpage/start-dashboard" className="menu-link">
-            <div className="sidebar-icon"><FaHome /></div>
+            <div className="sidebar-icon"><PiStorefrontBold    size='1.1rem' /></div>
             <span>Dashboard</span>
           </Link>
         </li>
@@ -69,17 +72,17 @@ const Sidebar = () => {
            onMouseLeave={() => setActiveItem(location.pathname)}
         >
           <Link to="/doctorprofile/dashboardpage/manage" className="menu-link">
-            <div className="sidebar-icon"><RiCalendarCheckLine /></div>
-            <span>Appointments</span>
+            <div className="sidebar-icon"><CgList /></div>
+            <span>My Appointments</span>
           </Link>
         </li>
-        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/calender' ? 'active' : ''}`}
-          onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/calender')}
+        <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/schedule' ? 'active' : ''}`}
+          onMouseEnter={() => setActiveItem('/doctorprofile/dashboardpage/schedule')}
           onMouseLeave={() => setActiveItem(location.pathname)}
         >
-          <Link to="/doctorprofile/dashboardpage/calender" className="menu-link">
-            <div className="sidebar-icon"><FaChartBar /></div>
-            <span>Calendar</span>
+          <Link to="/doctorprofile/dashboardpage/schedule" className="menu-link">
+            <div className="sidebar-icon"><FaRegCalendarAlt /></div>
+            <span>My schedule</span>
           </Link>
         </li>
         <li className={`menu-item ${activeItem === '/doctorprofile/dashboardpage/patient' ? 'active' : ''}`}
@@ -87,7 +90,7 @@ const Sidebar = () => {
          onMouseLeave={() => setActiveItem(location.pathname)}
         >
           <Link to="/doctorprofile/dashboardpage/patient" className="menu-link">
-            <div className="sidebar-icon"><FaRegFileAlt /></div>
+            <div className="sidebar-icon"><PiUserListBold /></div>
             <span>My Patient</span>
           </Link>
         </li>
