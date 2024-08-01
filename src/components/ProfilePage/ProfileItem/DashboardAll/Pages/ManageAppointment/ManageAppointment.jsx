@@ -23,7 +23,11 @@ const ManageAppointments = () => {
     { id: 10, customer: 'John Doe', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
     { id: 11, customer: 'John Doe', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
     { id: 12, customer: 'John Doe', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
-    { id: 13, customer: 'John Doe', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' }
+    { id: 13, customer: 'Rmakumar', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
+    { id: 14, customer: 'Rmakumar', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
+    { id: 15, customer: 'Rmakumar', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
+    { id: 16, customer: 'Rmakumar', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
+    { id: 17, customer: 'Rmakumar', listing: 'Dr. Pardhu', date: '12/10/24', time: '11:00 AM', status: 'Cancelled' },
   ]);
 
   const handleStatusChange = (id, newStatus) => {
@@ -78,6 +82,7 @@ const ManageAppointments = () => {
                       <option value="Approved">Approved</option>
                       <option value="Pending">Pending</option>
                       <option value="Cancelled">Cancelled</option>
+                      <option value="Completed">Completed</option>
                     </select>
                     <RiArrowDownSLine className="arrow-icon" />
                   </div>

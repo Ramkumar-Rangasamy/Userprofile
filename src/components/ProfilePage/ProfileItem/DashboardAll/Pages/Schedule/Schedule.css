@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.schedule-page {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  padding: 1rem;
+  /* background: #f7faff; */
+}
+
+/* 
+.demo-sidebar p {
+  cursor: pointer;
+  width: 5rem;
+  height: 2rem;
+  background: #bababa;
+} */
+
+.schedule-content {
+    width: 100%;
+    height: 80vh;
+    height: calc(90% - 2rem);
+  }
+/* 
+  .demo-top-component {
+    width: 100%;
+    height: 3rem;
+    background: rgb(253, 255, 250);
+  } */
+  
+  .myschedule {
+    width: 100%;
+    height: 27rem;
+  }
+  
+  .schedule-title {
+    color: #272848;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .allandcal{
+    display: flex;
+    width: 100%;
+    height: 28rem;
+    justify-content: space-between;
+  }
+
+  .calender{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 5px;
+    color: rgb(49, 104, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  .calender .toolbar{
+    padding: 0px 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+.calender .rbc-today {
+    background-color: rgb(255, 255, 220);
+}
+
+.calender .rbc-event{
+  background: mediumspringgreen;
+  color: #000;
+  font-size: 12px;
+  padding: 1px;
+  height: 100%;
+
+}
+
+.calender .rbc-event.rbc-selected{
+  background: rgb(49, 104, 255);
+  color: white;
+}
+
+.calender .rbc-event-content{
+  white-space: normal !important;
+}
+
+.swal2-popup{
+  padding: 1rem 2rem;
+  border-radius: none !important;
+}
+.swal2-title{
+  font-size: 18px;
+  padding: 0px;
+  text-align: start;
+  color: #000;
+}
+
+.swal2-html-container{
+  padding: 1rem 0px 0px 0px !important;
+}
+
+.swal2-html-container .addtimeslot{
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.swal2-html-container .addtimeslot #lineargroup{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.swal2-html-container .addtimeslot .inputgroup{
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.swal2-html-container .addtimeslot .inputgroup label{
+  text-align: start;
+  font-size: 16px;
+  color: black;
+}
+.swal2-html-container .addtimeslot .inputgroup input{
+  border: 1px solid rgb(193, 193, 193);
+  padding: 7px 10px;
+  border-radius: 8px;
+}
+
+.swal2-html-container .addtimeslot #lineargroup .inputgroup{
+  width: 49%;
+}
+
+.swal2-actions{
+  margin: 1rem 0px 0px 0px ;
+  justify-content: start;
+}
+.swal2-confirm{
+  background: rgb(49, 104, 255);
+  border-radius: none !important;
+  text-align: start;
+}
+
+/* .calender .rbc-toolbar {
+  display: none;
+} */
+
+@media (min-width:700px) {
+  .schedule-page{
+    padding: 2rem;
+  }
+}
+
+
+@media (min-width:1000px) {
+.schedule-content{
+  width:100%;
+  padding-left: 3rem;
+}
+.myschedule .allandcal{
+  height: 80%;
+}
+.calender .rbc-event{
+  padding: 5px;
+}
+}
