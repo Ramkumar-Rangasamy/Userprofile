@@ -1,6 +1,6 @@
 import React from "react";
 
-const Comment = () => {
+const Comment = ({ blogId }) => {
   return (
     <div className="comment-cnt">
       <img

@@ -6,7 +6,7 @@ import MostReads from "../widgets/MostReads";
 import Categories from "../widgets/Categories";
 import Comment from "./Comment";
 
-function BlogDetails() {
+function BlogDetails({ blog }) {
   return (
         <div className="blog-cnt">
           <div className="blog-post-cnt post-details-cnt">
