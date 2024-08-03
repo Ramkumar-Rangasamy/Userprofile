@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import DetailedBlog from "./DetailedBlog";
 import BlogDetails from "./BlogDetails";
 import PostComment from "./PostComment";
 import { IoIosCalendar } from "react-icons/io";
 import { TbSquareRoundedArrowDown } from "react-icons/tb";
 
 const BlogCard = () => {
-  const [activeBlog, setActiveBlog] = useState(false);
+  const [activeBlog, setActiveBlog] = useState(null);
 
   const blogDataArray = [
     {
@@ -60,14 +59,18 @@ const BlogCard = () => {
   ];
 
   const handleBlogClick = (id) => {
-    setActiveBlog((prev) => (prev === id ? false : id));
+    setActiveBlog((prev) => (prev === id ? null : id));
   };
 
   return (
-    <>
+    <div className="blog-card-container">
       {blogDataArray.map((blog) => (
-        <div key={blog.id}>
-          <div className="blog-card-cnt" onClick={(e) => {e.preventDefault(); handleBlogClick(blog.id); }}>
+        <div
+          key={blog.id}
+          className="blog-card-wrapper"
+          style={{ display: activeBlog && activeBlog !== blog.id ? 'none' : 'block' }}
+        >
+          <div  className="blog-card-cnt">
             <img src={blog.imageUrl} alt="blog" className="blog-card-img" />
             <div className="blog-card-profileInfo-cnt">
               <div className="profileInfo-cnt">
@@ -90,22 +93,24 @@ const BlogCard = () => {
               <h4>{blog.title}</h4>
               <p>{blog.previewText}</p>
             </div>
-            <div className="readMore-cnt">
+            <div className="readMore-cnt" onClick={(e) => { e.preventDefault(); handleBlogClick(blog.id); }}>
               <h4>Read more in {blog.readTime} Minutes</h4>
               <TbSquareRoundedArrowDown
                 size="1.3rem"
                 className="readMore-cnt-icon"
               />
             </div>
-            <div className="blogdetailstransition" style={{ display: activeBlog === blog.id ? "block" : "none" }}>
-              <BlogDetails blog={blog} />
-              <PostComment blogId={blog.id} />
-            </div>
+            {activeBlog === blog.id && (
+              <div className="blogdetailstransition">
+                <BlogDetails blog={blog} />
+                <PostComment blogId={blog.id} />
+              </div>
+               
+            )}
           </div>
-         
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

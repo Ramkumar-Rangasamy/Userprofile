@@ -1,5 +1,5 @@
-import Quill from "quill";
 import React, { useRef, useState } from "react";
+import Quill from "quill";
 import BlogInput from "./BlogInput";
 import Editor from "./Editor";
 
@@ -16,12 +16,37 @@ const AddNewBlog = () => {
     image: null,
   });
 
+  const [errors, setErrors] = useState({});
+
   console.log(iscurrentFocus, newBlogdata);
 
   const Delta = Quill.import("delta");
   
   const quillRef = useRef();
   const fileInputRef = useRef(null);
+
+  const validate = () => {
+    let tempErrors = {};
+    if (!newBlogdata.title) tempErrors.title = "Title is required *";
+    if (!newBlogdata.author) tempErrors.author = "Author is required *";
+    if (!newBlogdata.category) tempErrors.category = "Category is required *";
+    if (!newBlogdata.subCategory) tempErrors.subCategory = "Sub-category is required *";
+    if (!newBlogdata.tags) tempErrors.tags = "Tags are required *";
+    if (!newBlogdata.status) tempErrors.status = "Status is required *";
+    if (!newBlogdata.description) tempErrors.description = "Description is required *";
+    if (!newBlogdata.image) tempErrors.image = "Image is required *";
+    return tempErrors;
+  };
+
+  const handlePublish = () => {
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length === 0) {
+      // Submit form
+      console.log("Form submitted", newBlogdata);
+    } else {
+      setErrors(validationErrors);
+    }
+  };
 
   return (
     <div className="create-blog-cnt">
@@ -36,6 +61,7 @@ const AddNewBlog = () => {
           label="title"
           placeholder={"Blog Title"}
         />
+        {errors.title && <p className="error">{errors.title}</p>}
 
         <BlogInput
           currentFocus={iscurrentFocus}
@@ -47,6 +73,7 @@ const AddNewBlog = () => {
           label="author"
           placeholder={"Author Name"}
         />
+        {errors.author && <p className="error">{errors.author}</p>}
 
         <BlogInput
           currentFocus={iscurrentFocus}
@@ -58,6 +85,7 @@ const AddNewBlog = () => {
           label="category"
           placeholder={"Blog Category"}
         />
+        {errors.category && <p className="error">{errors.category}</p>}
 
         <BlogInput
           currentFocus={iscurrentFocus}
@@ -69,6 +97,7 @@ const AddNewBlog = () => {
           label="subCategory"
           placeholder={"Blog Sub Category"}
         />
+        {errors.subCategory && <p className="error">{errors.subCategory}</p>}
 
         <BlogInput
           currentFocus={iscurrentFocus}
@@ -80,6 +109,8 @@ const AddNewBlog = () => {
           label="tags"
           placeholder={"Tags (separated with a comma)"}
         />
+        {errors.tags && <p className="error">{errors.tags}</p>}
+
         <div className="status-input-cnt">
           <p
             className="input-placeholder"
@@ -89,10 +120,10 @@ const AddNewBlog = () => {
           </p>
 
           <div className="select-option-cnt">
-            <label htmlFor="check" className="checkbox-cnt">
+            <label htmlFor="check-active" className="checkbox-cnt">
               <input
                 type="checkbox"
-                id="check"
+                id="check-active"
                 className="checkbox"
                 checked={newBlogdata.status === "active"}
                 onChange={() =>
@@ -101,10 +132,10 @@ const AddNewBlog = () => {
               />
               <p>Active</p>
             </label>
-            <label htmlFor="check" className="checkbox-cnt">
+            <label htmlFor="check-inactive" className="checkbox-cnt">
               <input
                 type="checkbox"
-                id="check"
+                id="check-inactive"
                 className="checkbox"
                 checked={newBlogdata.status === "notActive"}
                 onChange={() =>
@@ -114,31 +145,40 @@ const AddNewBlog = () => {
               <p>In Active</p>
             </label>
           </div>
+          {errors.status && <p className="error">{errors.status}</p>}
         </div>
       </div>
+      
       <div className="text-editor-cnt">
+      {errors.description && <p className="error">{errors.description}</p>}
         <Editor
           ref={quillRef}
           onTextChange={(value) =>
             setNewBlogdata({ ...newBlogdata, description: value })
           }
         />
+
       </div>
+
       <div className="blog-long-input-cnt">
         <input
           type="file"
           ref={fileInputRef}
-          // value={value}
           className="file-input"
           onChange={(e) =>
             setNewBlogdata({ ...newBlogdata, image: e.target.files[0] })
           }
         />
+        
         <p className="absolute-file-name">{newBlogdata?.image?.name}</p>
+        {errors.image && <p className="error">{errors.image}</p>}
+
         <div
+
           className="choose-file-label"
           onClick={() => fileInputRef.current.click()}
         >
+
           <p>Choose File</p>
         </div>
         <p
@@ -152,7 +192,7 @@ const AddNewBlog = () => {
         </p>
       </div>
       <div className="btns-cnt">
-        <div className="action-btn">
+        <div className="action-btn" onClick={handlePublish}>
           <p>Publish Blog</p>
         </div>
         <div
