@@ -66,28 +66,28 @@ export default function ReactBigCalendar() {
     Swal.fire({
       title: "Add new time slot",
       html: `
-        <form class="addtimeslot">
-        <div class="inputgroup">
-        <label htmlFor="date">Date</label>
-        <input type="Date" id="date"/>
-      </div>
-      <div id="lineargroup">
-        <div class="inputgroup">
-          <label htmlFor="starttime">Start Time</label>
-          <input type="text" id="starttime" />
-        </div>
-        <div class="inputgroup">
-          <label htmlFor="endtime">End Time</label>
-          <input type="text" id="endtime" />
-        </div>
-      </div>
-      <div class="inputgroup">
-        <label htmlFor="SelectHospital">Select Hospital</label>
-      <select id="hospital" name="hospital" class="form-control">
-        <option value=""</option>
-      </select>
-      </div>
-    </form>
+            <form class="addtimeslot">
+            <div class="inputgroup">
+            <label htmlFor="date">Date</label>
+            <input type="Date" id="date"/>
+          </div>
+          <div id="lineargroup">
+            <div class="inputgroup">
+              <label htmlFor="starttime">Start Time</label>
+              <input type="text" id="starttime" />
+            </div>
+            <div class="inputgroup">
+              <label htmlFor="endtime">End Time</label>
+              <input type="text" id="endtime" />
+            </div>
+          </div>
+          <div class="inputgroup">
+            <label htmlFor="SelectHospital">Select Hospital</label>
+          <select id="hospital" name="hospital" class="form-control">
+            <option value=""</option>
+          </select>
+          </div>
+        </form>
         `,
         confirmButtonText: `Add Time Slot `,
         showCancelButton: true,

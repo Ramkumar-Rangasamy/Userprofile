@@ -1,3 +1,4 @@
+
 .main-dashboard-page {
   padding: 0 20px;
 }
@@ -38,7 +39,7 @@
     "reviews booking-rate booking-rate"
     "schedule schedule schedule";
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 330px 170px auto;
+  grid-template-rows: 330px 170px 170px auto;
   grid-gap: 20px;
   margin: 5px 5px 5px 5px;
 }
@@ -527,7 +528,6 @@
 .schedule .schedule-header {
   display: flex;
   justify-content: space-between;
-  padding: 28px;
 }
 
 .schedule-header h2 {
@@ -571,7 +571,7 @@
   display: flex;
   justify-content: space-between;
   background: #f7faff;
-  margin: 0px 28px 0px 20px;
+  margin: 10px 0;
 }
 
 .schedule-container .calendar button {
@@ -607,13 +607,13 @@
 }
 
 .schedule-container .schedule-list {
-  padding: 13px;
-  max-height: 270px; /* Adjust this height to show 3 items */
+  max-height: 260px; /* Adjust this height to show 3 items */
   overflow-y: auto;
+  
 }
 
 .schedule-container .schedule-list::-webkit-scrollbar {
-  width: 5px;
+  width:5px;
 }
 
 .schedule-container .schedule-list::-webkit-scrollbar-thumb {

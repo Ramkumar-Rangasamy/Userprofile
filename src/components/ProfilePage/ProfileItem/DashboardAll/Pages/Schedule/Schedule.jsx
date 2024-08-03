@@ -1,21 +1,18 @@
 import React from 'react'
-import './Schedule.css'
+import './myschedule.css'
 import ReactBigCalendar from './ReactBigCalendar';
 
 function Schedule() {
   return (
+    <div className='my-schedule-container'>
+    <h2>My Schedule</h2>
     <div className="schedule-page">
-      <div className="schedule-content">
-        <div className="demo-top-component"></div>
-        <div className="myschedule">
-            <h2 className="schedule-title">My Schedule</h2>
-            <div className="allandcal">
-                <div className="calender">
-                    <ReactBigCalendar/>
-                </div>
-            </div>
-            </div>
+      <div className="allandcal">
+        <div className="calender">
+          <ReactBigCalendar/>
+        </div>
       </div>
+    </div>
     </div>
   )
 }
